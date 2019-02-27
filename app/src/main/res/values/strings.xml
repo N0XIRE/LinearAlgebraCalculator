@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">LinearAlgebraCalculator</string>
+    <string name="app_name">Linear Algebra Calculator</string>
+    <string name="calculate_help">Select from the calulations above, then press calculate.</string>
+    <string name="button_Calculate">Calculate</string>
+    <string-array name="calculatorSelectList">
+        <item>Item 1</item>
+        <item>Item 2</item>
+        <item>Item 3</item>
+    </string-array>
 </resources>
