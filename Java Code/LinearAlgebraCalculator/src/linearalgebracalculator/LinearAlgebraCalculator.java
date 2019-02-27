@@ -19,12 +19,20 @@ public class LinearAlgebraCalculator {
                 temp[outer][inner] = xd.nextInt();
             }
         }
-        int[] v = new int[columnSize];
+       /* int[] v = new int[columnSize];
         for(int i = 0; i < columnSize; i++){
             v[i] = xd.nextInt();
         }
+        */
+       int[][] b = new int[3][3];
+       for (int outer = 0; outer < rowSize; outer++) {
+            for (int inner = 0; inner < columnSize; inner++) {
+                b[outer][inner] = xd.nextInt();
+            }
+        }
+       
         Array arr = new Array(temp);
-        System.out.println(arr.identityString());
+        System.out.println(arr.MtimesMstring(b));
     }
 
 }
