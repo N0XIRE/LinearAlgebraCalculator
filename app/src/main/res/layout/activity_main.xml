@@ -83,6 +83,7 @@
         android:layout_marginStart="145dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="1"
         android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,6 +95,7 @@
         android:layout_height="50dp"
         android:layout_marginEnd="145dp"
         android:ems="10"
+        android:hint="1"
         android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBaseline_toBaselineOf="@+id/matrixWidth"
@@ -116,7 +118,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:text="Done"
         app:layout_constraintEnd_toEndOf="parent"
@@ -139,8 +141,8 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="346dp"
-        android:layout_height="346dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
@@ -160,6 +162,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix12"
             app:layout_constraintTop_toBottomOf="@+id/matrix8" />
 
@@ -172,6 +175,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix11"
             app:layout_constraintTop_toBottomOf="@+id/matrix7" />
 
@@ -184,6 +188,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix22"
             app:layout_constraintTop_toBottomOf="@+id/matrix18" />
 
@@ -191,11 +196,11 @@
             android:id="@+id/matrix16"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/matrix11" />
 
@@ -208,6 +213,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix16"
             app:layout_constraintTop_toBottomOf="@+id/matrix12" />
 
@@ -220,6 +226,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix17"
             app:layout_constraintTop_toBottomOf="@+id/matrix13" />
 
@@ -227,11 +234,11 @@
             android:id="@+id/matrix21"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/matrix16" />
 
@@ -244,6 +251,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix18"
             app:layout_constraintTop_toBottomOf="@+id/matrix14" />
 
@@ -256,6 +264,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix23"
             app:layout_constraintTop_toBottomOf="@+id/matrix19" />
 
@@ -268,6 +277,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix21"
             app:layout_constraintTop_toBottomOf="@+id/matrix17" />
 
@@ -275,11 +285,11 @@
             android:id="@+id/matrix11"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/matrix6" />
 
@@ -287,11 +297,10 @@
             android:id="@+id/matrix1"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -304,6 +313,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix8"
             app:layout_constraintTop_toBottomOf="@+id/matrix4" />
 
@@ -316,6 +326,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix9"
             app:layout_constraintTop_toBottomOf="@+id/matrix5" />
 
@@ -328,6 +339,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix13"
             app:layout_constraintTop_toBottomOf="@+id/matrix9" />
 
@@ -340,6 +352,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix14"
             app:layout_constraintTop_toBottomOf="@+id/matrix10" />
 
@@ -348,10 +361,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix1"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -360,10 +373,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix2"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -372,10 +385,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix3"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -384,10 +397,10 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix4"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -395,11 +408,11 @@
             android:id="@+id/matrix6"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/matrix1" />
 
@@ -412,6 +425,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix6"
             app:layout_constraintTop_toBottomOf="@+id/matrix2" />
 
@@ -424,6 +438,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix7"
             app:layout_constraintTop_toBottomOf="@+id/matrix3" />
 
@@ -436,6 +451,7 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix24"
             app:layout_constraintTop_toBottomOf="@+id/matrix20" />
 
@@ -448,8 +464,19 @@
             android:ems="10"
             android:inputType="number"
             android:textAlignment="center"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix19"
             app:layout_constraintTop_toBottomOf="@+id/matrix15" />
     </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="476dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </android.support.constraint.ConstraintLayout>
