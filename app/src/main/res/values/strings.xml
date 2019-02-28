@@ -8,4 +8,10 @@
     <string name="button_Home">Home</string>
     <string name="button_Info">Info</string>
     <string name="title_activity_calculate__screen">calculate_Screen</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_donate">Donate</string>
+    <string name="title_activity_info">Info</string>
 </resources>
