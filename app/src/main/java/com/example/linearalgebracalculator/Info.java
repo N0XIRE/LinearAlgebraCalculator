@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class Info extends AppCompatActivity {
@@ -12,9 +13,10 @@ public class Info extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
+
         // FOOTER NAV START
         Button homeButton = (Button) findViewById(R.id.homeButton);
-        homeButton.setOnClickListener(new View.OnClickListener() {
+        homeButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -23,7 +25,7 @@ public class Info extends AppCompatActivity {
             }
         });
         Button settingsButton = (Button) findViewById(R.id.settingsButton);
-        settingsButton.setOnClickListener(new View.OnClickListener() {
+        settingsButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -32,7 +34,7 @@ public class Info extends AppCompatActivity {
             }
         });
         Button donateButton = (Button) findViewById(R.id.donateButton);
-        donateButton.setOnClickListener(new View.OnClickListener() {
+        donateButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -41,7 +43,7 @@ public class Info extends AppCompatActivity {
             }
         });
         Button infoButton = (Button) findViewById(R.id.infoButton);
-        infoButton.setOnClickListener(new View.OnClickListener() {
+        infoButton.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View view) {
