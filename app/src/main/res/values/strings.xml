@@ -2,7 +2,7 @@
     <string name="app_name">Linear Algebra Calculator</string>
     <string name="calculate_help">Select matrix size then enter matrix data.</string>
     <string name="button_Calculate">Calculate</string>
-    <string name="button_Done">Done</string>
+    <string name="button_Done">Continue</string>
     <string name="button_Donate">Donate</string>
     <string name="button_Settings">Settings</string>
     <string name="button_Home">Home</string>
