@@ -33,7 +33,7 @@ public class LinearAlgebraCalculator {
         }
        
         Array arr = new Array(temp);
-        System.out.println(arr.MtimesMstring(b));
+        //System.out.println(arr.MtimesMstring(b));
     }
 
 }
