@@ -15,6 +15,8 @@ public class MainActivity extends Activity{
     private EditText matrixWidth;
     private EditText matrixHeight;
 
+    public final static String EXTRA_MESSAGE = "com.example.linearalgebracalculator.MESSAGE";
+
     public int valueWidth = 0;
     public int valueHeight = 0;
 
@@ -24,6 +26,7 @@ public class MainActivity extends Activity{
         setContentView(R.layout.activity_main);
 
         matrixWidth = (EditText) findViewById(R.id.matrixWidth);
+        matrixHeight = (EditText) findViewById(R.id.matrixHeight);
         matrixWidth.addTextChangedListener(new TextWatcher() {
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -64,15 +67,26 @@ public class MainActivity extends Activity{
             }
         });
         findViewById(R.id.matrix1).setVisibility(View.VISIBLE);
-    }
-    public void sendMessage(View view) {
-        Button btn = (Button)findViewById(R.id.toCalculate);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        Button toCalculator = (Button) findViewById(R.id.toCalculate);
+        toCalculator.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, calculate_Screen.class));
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, calculate_Screen.class);
+                startActivity(intent);
             }
         });
+        // FOOTER NAV START
+        Button homeButton = (Button) findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        // FOOTER NAV END
     }
 }

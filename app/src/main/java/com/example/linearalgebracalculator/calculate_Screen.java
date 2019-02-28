@@ -1,14 +1,12 @@
 package com.example.linearalgebracalculator;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -19,7 +17,7 @@ public class calculate_Screen extends Activity implements AdapterView.OnItemSele
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.content_calculate__screen);
 
         // Spinner element
         Spinner spinner = findViewById(R.id.calculateSelect);
@@ -44,6 +42,19 @@ public class calculate_Screen extends Activity implements AdapterView.OnItemSele
 
         // attaching data adapter to spinner
         spinner.setAdapter(dataAdapter);
+
+
+        // FOOTER NAV START
+        Button homeButton = (Button) findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(calculate_Screen.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        // FOOTER NAV END
     }
 
     @Override

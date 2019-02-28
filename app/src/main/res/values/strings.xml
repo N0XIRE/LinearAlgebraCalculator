@@ -2,10 +2,10 @@
     <string name="app_name">Linear Algebra Calculator</string>
     <string name="calculate_help">Select matrix size then enter matrix data.</string>
     <string name="button_Calculate">Calculate</string>
-    <string-array name="calculatorSelectList">
-        <item>Item 1</item>
-        <item>Item 2</item>
-        <item>Item 3</item>
-    </string-array>
+    <string name="button_Done">Done</string>
+    <string name="button_Donate">Donate</string>
+    <string name="button_Settings">Settings</string>
+    <string name="button_Home">Home</string>
+    <string name="button_Info">Info</string>
     <string name="title_activity_calculate__screen">calculate_Screen</string>
 </resources>
