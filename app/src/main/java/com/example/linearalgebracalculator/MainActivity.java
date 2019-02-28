@@ -67,6 +67,21 @@ public class MainActivity extends Activity{
         });
         findViewById(R.id.matrix1).setVisibility(View.VISIBLE);
 
+        /* psuedoesudodoso code
+
+            for(int outer = 0; outer < rows; outer++ ){
+                
+                for(int inner = 0; inner< columns; inner++){
+                    String s = R.id.matrix;
+                    s+= "" + outer + "" + inner; 
+                    findViewById(s).setVisibility(View.VISIBLE);
+                }
+
+            }        
+
+
+        */
+
         Button toCalculator = (Button) findViewById(R.id.toCalculate);
         toCalculator.setOnClickListener(new View.OnClickListener() {
 

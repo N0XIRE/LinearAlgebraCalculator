@@ -19,6 +19,7 @@ public class LinearAlgebraCalculator {
                 temp[outer][inner] = xd.nextInt();
             }
         }
+        
        /* int[] v = new int[columnSize];
         for(int i = 0; i < columnSize; i++){
             v[i] = xd.nextInt();
