@@ -17,7 +17,9 @@ public class MainActivity extends Activity{
     public final static String EXTRA_MESSAGE = "com.example.linearalgebracalculator.MESSAGE";
 
     public int valueWidth = 0;
+    public int oldWidth = 1;
     public int valueHeight = 0;
+    public int oldHeight = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,28 @@ public class MainActivity extends Activity{
             public void afterTextChanged(Editable s) {
                 try {
                     valueWidth = Integer.valueOf(String.valueOf(s));
+                    if (valueWidth > 5){
+                        valueWidth = 5;
+                    }
                 }
                 catch (Exception e){
 
+                }
+                if(oldWidth > valueWidth){
+                    for(int inner = 1; inner <= 5; inner++){
+                        String x = "matrix";
+                        x+= "" + "1" + "" + inner;
+                        int id = getResources().getIdentifier(x, "id", getPackageName());
+                        findViewById(id).setVisibility(View.GONE);
+                    }
+                }
+                oldWidth = valueWidth;
+
+                for(int inner = 1; inner <= valueWidth; inner++){
+                    String x = "matrix";
+                    x+= "" + "1" + "" + inner;
+                    int id = getResources().getIdentifier(x, "id", getPackageName());
+                    findViewById(id).setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -59,28 +80,36 @@ public class MainActivity extends Activity{
             public void afterTextChanged(Editable s) {
                 try {
                     valueHeight = Integer.valueOf(String.valueOf(s));
+                    if (valueHeight > 5){
+                        valueHeight = 5;
+                    }
                 }
                 catch (Exception e){
 
                 }
+                if(oldHeight > valueHeight){
+                    for(int outer = 1; outer <= 5; outer++ ){
+                        for(int inner = 1; inner <= 5; inner++){
+                            String x = "matrix";
+                            x+= "" + outer + "" + inner;
+                            int id = getResources().getIdentifier(x, "id", getPackageName());
+                            findViewById(id).setVisibility(View.GONE);
+                        }
+                    }
+                }
+                oldHeight = valueHeight;
+
+                for(int outer = 1; outer <= valueHeight; outer++ ){
+                    for(int inner = 1; inner <= valueWidth; inner++){
+                        String x = "matrix";
+                        x+= "" + outer + "" + inner;
+                        int id = getResources().getIdentifier(x, "id", getPackageName());
+                        findViewById(id).setVisibility(View.VISIBLE);
+                    }
+                }
             }
         });
-        findViewById(R.id.matrix1).setVisibility(View.VISIBLE);
 
-        /* psuedoesudodoso code
-
-            for(int outer = 0; outer < rows; outer++ ){
-                
-                for(int inner = 0; inner< columns; inner++){
-                    String s = R.id.matrix;
-                    s+= "" + outer + "" + inner; 
-                    findViewById(s).setVisibility(View.VISIBLE);
-                }
-
-            }        
-
-
-        */
 
         Button toCalculator = (Button) findViewById(R.id.toCalculate);
         toCalculator.setOnClickListener(new View.OnClickListener() {

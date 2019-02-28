@@ -40,7 +40,7 @@
         android:layout_marginStart="12dp"
         android:elevation="2dp"
         android:text="@string/button_Settings"
-        android:textColor="@color/InactiveText"
+        android:textColor="@android:color/tertiary_text_light"
         android:textSize="14sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/homeButton"
         app:layout_constraintStart_toEndOf="@+id/homeButton" />
@@ -53,7 +53,7 @@
         android:layout_marginEnd="12dp"
         android:elevation="2dp"
         android:text="@string/button_Donate"
-        android:textColor="@color/InactiveText"
+        android:textColor="@android:color/tertiary_text_light"
         android:textSize="14sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/infoButton"
         app:layout_constraintEnd_toStartOf="@+id/infoButton" />
@@ -66,7 +66,7 @@
         android:layout_marginEnd="12dp"
         android:elevation="2dp"
         android:text="@string/button_Info"
-        android:textColor="@color/InactiveText"
+        android:textColor="@android:color/tertiary_text_light"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/footer"
@@ -138,7 +138,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
         android:onClick="sendMessage"
         android:text="@string/button_Done"
@@ -175,7 +175,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <EditText
-            android:id="@+id/matrix13"
+            android:id="@+id/matrix33"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -184,11 +184,11 @@
             android:inputType="number"
             android:textAlignment="center"
             android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix12"
-            app:layout_constraintTop_toBottomOf="@+id/matrix8" />
+            app:layout_constraintStart_toEndOf="@+id/matrix32"
+            app:layout_constraintTop_toBottomOf="@+id/matrix23" />
 
         <EditText
-            android:id="@+id/matrix12"
+            android:id="@+id/matrix32"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -197,11 +197,11 @@
             android:inputType="number"
             android:textAlignment="center"
             android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix11"
-            app:layout_constraintTop_toBottomOf="@+id/matrix7" />
+            app:layout_constraintStart_toEndOf="@+id/matrix31"
+            app:layout_constraintTop_toBottomOf="@+id/matrix22" />
 
         <EditText
-            android:id="@+id/matrix23"
+            android:id="@+id/matrix53"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -210,11 +210,11 @@
             android:inputType="number"
             android:textAlignment="center"
             android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix22"
-            app:layout_constraintTop_toBottomOf="@+id/matrix18" />
+            app:layout_constraintStart_toEndOf="@+id/matrix52"
+            app:layout_constraintTop_toBottomOf="@+id/matrix43" />
 
         <EditText
-            android:id="@+id/matrix16"
+            android:id="@+id/matrix41"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
@@ -223,10 +223,10 @@
             android:textAlignment="center"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/matrix11" />
+            app:layout_constraintTop_toBottomOf="@+id/matrix31" />
 
         <EditText
-            android:id="@+id/matrix17"
+            android:id="@+id/matrix42"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -235,11 +235,11 @@
             android:inputType="number"
             android:textAlignment="center"
             android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix16"
-            app:layout_constraintTop_toBottomOf="@+id/matrix12" />
+            app:layout_constraintStart_toEndOf="@+id/matrix41"
+            app:layout_constraintTop_toBottomOf="@+id/matrix32" />
 
         <EditText
-            android:id="@+id/matrix18"
+            android:id="@+id/matrix43"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -248,11 +248,11 @@
             android:inputType="number"
             android:textAlignment="center"
             android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix17"
-            app:layout_constraintTop_toBottomOf="@+id/matrix13" />
+            app:layout_constraintStart_toEndOf="@+id/matrix42"
+            app:layout_constraintTop_toBottomOf="@+id/matrix33" />
 
         <EditText
-            android:id="@+id/matrix21"
+            android:id="@+id/matrix51"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="16dp"
@@ -261,10 +261,10 @@
             android:textAlignment="center"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/matrix16" />
+            app:layout_constraintTop_toBottomOf="@+id/matrix41" />
 
         <EditText
-            android:id="@+id/matrix19"
+            android:id="@+id/matrix44"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -273,8 +273,57 @@
             android:inputType="number"
             android:textAlignment="center"
             android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix18"
-            app:layout_constraintTop_toBottomOf="@+id/matrix14" />
+            app:layout_constraintStart_toEndOf="@+id/matrix43"
+            app:layout_constraintTop_toBottomOf="@+id/matrix34" />
+
+        <EditText
+            android:id="@+id/matrix54"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix53"
+            app:layout_constraintTop_toBottomOf="@+id/matrix44" />
+
+        <EditText
+            android:id="@+id/matrix52"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix51"
+            app:layout_constraintTop_toBottomOf="@+id/matrix42" />
+
+        <EditText
+            android:id="@+id/matrix31"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/matrix21" />
+
+        <EditText
+            android:id="@+id/matrix11"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/matrix24"
@@ -287,181 +336,7 @@
             android:textAlignment="center"
             android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix23"
-            app:layout_constraintTop_toBottomOf="@+id/matrix19" />
-
-        <EditText
-            android:id="@+id/matrix22"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix21"
-            app:layout_constraintTop_toBottomOf="@+id/matrix17" />
-
-        <EditText
-            android:id="@+id/matrix11"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/matrix6" />
-
-        <EditText
-            android:id="@+id/matrix1"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/matrix9"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix8"
-            app:layout_constraintTop_toBottomOf="@+id/matrix4" />
-
-        <EditText
-            android:id="@+id/matrix10"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix9"
-            app:layout_constraintTop_toBottomOf="@+id/matrix5" />
-
-        <EditText
-            android:id="@+id/matrix14"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix13"
-            app:layout_constraintTop_toBottomOf="@+id/matrix9" />
-
-        <EditText
-            android:id="@+id/matrix15"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix14"
-            app:layout_constraintTop_toBottomOf="@+id/matrix10" />
-
-        <EditText
-            android:id="@+id/matrix2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix1"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/matrix3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix2"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/matrix4"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix3"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/matrix5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix4"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/matrix6"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/matrix1" />
-
-        <EditText
-            android:id="@+id/matrix7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix6"
-            app:layout_constraintTop_toBottomOf="@+id/matrix2" />
-
-        <EditText
-            android:id="@+id/matrix8"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="number"
-            android:textAlignment="center"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix7"
-            app:layout_constraintTop_toBottomOf="@+id/matrix3" />
+            app:layout_constraintTop_toBottomOf="@+id/matrix14" />
 
         <EditText
             android:id="@+id/matrix25"
@@ -474,10 +349,10 @@
             android:textAlignment="center"
             android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/matrix24"
-            app:layout_constraintTop_toBottomOf="@+id/matrix20" />
+            app:layout_constraintTop_toBottomOf="@+id/matrix15" />
 
         <EditText
-            android:id="@+id/matrix20"
+            android:id="@+id/matrix34"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="16dp"
@@ -486,8 +361,133 @@
             android:inputType="number"
             android:textAlignment="center"
             android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/matrix19"
-            app:layout_constraintTop_toBottomOf="@+id/matrix15" />
+            app:layout_constraintStart_toEndOf="@+id/matrix33"
+            app:layout_constraintTop_toBottomOf="@+id/matrix24" />
+
+        <EditText
+            android:id="@+id/matrix35"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix34"
+            app:layout_constraintTop_toBottomOf="@+id/matrix25" />
+
+        <EditText
+            android:id="@+id/matrix12"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix11"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/matrix13"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix12"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/matrix14"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix13"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/matrix15"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix14"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/matrix21"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/matrix11" />
+
+        <EditText
+            android:id="@+id/matrix22"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix21"
+            app:layout_constraintTop_toBottomOf="@+id/matrix12" />
+
+        <EditText
+            android:id="@+id/matrix23"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix22"
+            app:layout_constraintTop_toBottomOf="@+id/matrix13" />
+
+        <EditText
+            android:id="@+id/matrix55"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix54"
+            app:layout_constraintTop_toBottomOf="@+id/matrix45" />
+
+        <EditText
+            android:id="@+id/matrix45"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/matrix44"
+            app:layout_constraintTop_toBottomOf="@+id/matrix35" />
     </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
