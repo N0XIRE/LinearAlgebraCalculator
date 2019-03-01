@@ -9,13 +9,13 @@
     tools:context=".Settings">
 
     <com.google.android.gms.ads.AdView
-        android:id="@+id/banner_AdView3"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/ad_id_banner"
-        android:layout_width="0dp"
+        android:id="@+id/banner_AdView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ad_id_banner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
