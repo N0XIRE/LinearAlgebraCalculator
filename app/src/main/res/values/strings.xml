@@ -17,6 +17,6 @@
     <string name="contact">Contact Us</string>
     <string name="contactInfo">Find any bugs or want to request a feature? Get in touch with us here.</string>
     <string name="contactAbout">About Us</string>
-    <string name="contactAboutInfo">We made this thing.</string>
+    <string name="contactAboutInfo">We made this thing.\n\nGithub Repo: github.com/N0XIRE/LinearAlgebraCalculator</string>
     <string name="ad_id_banner">ca-app-pub-9390048287444061/3221111032</string>
 </resources>
