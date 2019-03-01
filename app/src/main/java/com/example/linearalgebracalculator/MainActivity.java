@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
@@ -157,7 +158,7 @@ public class MainActivity extends Activity{
         });
         // FOOTER NAV END
 
-        MobileAds.initialize(this, "ca-app-pub-9390048287444061/3221111032");
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
         // Load the add into Admob banner view.
         mBannerAd = (AdView) findViewById(R.id.banner_AdView);
         //Load BannerAd
@@ -165,7 +166,6 @@ public class MainActivity extends Activity{
     }
     private void showBannerAd() {
         AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice("754DB6521943676637AE86202C5ACE52")
                 .build();
         mBannerAd.loadAd(adRequest);
 
