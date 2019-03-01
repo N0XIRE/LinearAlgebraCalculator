@@ -5,10 +5,10 @@ package linearalgebracalculator;
 
 public class Array {
    
-    private int[][] identity;
-    private int[][] arr;
-    private int[][] arr2;
-    private int[] vector;
+    private Fraction[][] identity;
+    private Fraction[][] arr;
+    private Fraction[][] arr2;
+    private Fraction[] vector;
     private int columns;
     private int rows;
     private MatrixMath math;
@@ -19,7 +19,7 @@ public class Array {
     }
     
     public Array(int r, int c){
-        arr = new int[r][c];
+        arr = new Fraction[r][c];
         rows = r;
         columns = c;
         math = new MatrixMath(arr);
@@ -28,7 +28,8 @@ public class Array {
         }
     }
     
-    public Array(int[][] arr){
+    
+    public Array(Fraction[][] arr){
         this.arr = arr;
         rows = arr.length;
         columns = arr.length;
@@ -38,28 +39,28 @@ public class Array {
         }
     }
     
-    void addSecondArray(int [][] arr2){
+    void addSecondArray(Fraction [][] arr2){
         this.arr2 = arr2;
     }
     
-    void setArray(int[][] arr){
+    void setArray(Fraction[][] arr){
         this.arr = arr;
         math = new MatrixMath(arr);
     }
     void setIdentity(){
-        identity = new int[rows][columns];
+        identity = new Fraction[rows][columns];
         for(int outer = 0; outer < rows; outer++){
             for(int inner = 0; inner<columns; inner++){
                 if(inner ==  outer){
-                    identity[inner][outer] = 1;
+                    identity[inner][outer] = new Fraction(1);
                 }else{
-                    identity[inner][outer] = 0;
+                    identity[inner][outer] = new Fraction(0);
                 }
             }
         }
     }
     
-    int [][] Identity(){
+    Fraction [][] Identity(){
         return identity;
     }
     
@@ -71,16 +72,26 @@ public class Array {
         MtimesV(vector);
     }
     
-    int [] MtimesV(int[] v){
+    Fraction[] MtimesV(int[] v){
+        vector = math.convertToFraction(v);
+        return math.MtimesV(v);
+    }
+    
+    Fraction[] MtimesV(Fraction[] v){
         vector = v;
         return math.MtimesV(v);
     }
+    
+    String ELop(String s){
+        return math.ELop(s);
+    }
+    
     
     void MtimesM(){
         MtimesM(arr2);
     }
     
-    int [][] MtimesM(int [][] arr2){
+    Fraction [][] MtimesM(Fraction [][] arr2){
         this.arr2 = arr2;
         return math.MtimesM(arr2);
     }
@@ -89,7 +100,7 @@ public class Array {
         return math.getLinearCombination();
     }
     
-    String MtimesMstring(int [][] arr2){
+    String MtimesMstring(Fraction [][] arr2){
         this.arr2 = arr2;
         return MtimesMstring();
     }
