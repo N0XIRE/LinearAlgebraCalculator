@@ -17,9 +17,6 @@
             android:name=".Info"
             android:label="@string/title_activity_info" />
         <activity
-            android:name=".Donate"
-            android:label="@string/title_activity_donate" />
-        <activity
             android:name=".Settings"
             android:label="@string/title_activity_settings" />
         <activity

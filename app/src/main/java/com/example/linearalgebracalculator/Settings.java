@@ -31,15 +31,6 @@ public class Settings extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button donateButton = (Button) findViewById(R.id.donateButton);
-        donateButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Settings.this, Donate.class);
-                startActivity(intent);
-            }
-        });
         Button infoButton = (Button) findViewById(R.id.infoButton);
         infoButton.setOnClickListener(new View.OnClickListener() {
 
