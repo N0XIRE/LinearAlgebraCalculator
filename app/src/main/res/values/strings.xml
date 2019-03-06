@@ -16,7 +16,11 @@
     <string name="title_activity_info">Info</string>
     <string name="contact">Contact Us</string>
     <string name="contactInfo">Find any bugs or want to request a feature? Get in touch with us here.</string>
-    <string name="contactAbout">About Us</string>
-    <string name="contactAboutInfo">We made this thing.\n\nGithub Repo: github.com/N0XIRE/LinearAlgebraCalculator</string>
+    <string name="contactAbout">About</string>
+    <string name="contactAboutInfo">We made this thing.</string>
+    <string name="contactAboutRepo">Github Repo: github.com/N0XIRE/LinearAlgebraCalculator</string>
+    <string name="contactAboutDevs">Developed By</string>
+    <string name="contactAboutConnor">Connor Wilson: wgithub.com/N0XIRE</string>
+    <string name="contactAboutSpencer">github.com/RedCyanide</string>
     <string name="ad_id_banner">ca-app-pub-3940256099942544/6300978111</string>
 </resources>
