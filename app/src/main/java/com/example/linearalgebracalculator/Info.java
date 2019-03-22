@@ -1,11 +1,14 @@
 package com.example.linearalgebracalculator;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -55,7 +58,20 @@ public class Info extends AppCompatActivity {
         mBannerAd = (AdView) findViewById(R.id.banner_AdView);
         //Load BannerAd
         showBannerAd();
+
+        ImageView imgView = (ImageView) findViewById(R.id.Mail);
+        imgView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                String url = "https://google.com";
+
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
     }
+
     private void showBannerAd() {
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
