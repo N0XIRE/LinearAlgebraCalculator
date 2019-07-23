@@ -32,8 +32,10 @@ public class LinearAlgebraCalculator {
             }
         }
        
-        Array arr = new Array(temp);
-        //System.out.println(arr.MtimesMstring(b));
+        Matrix m1 = new Matrix(temp);
+        Matrix m2 = new Matrix(b);
+        MatrixMath math = new MatrixMath(m1);
+        System.out.println(math.MtimesMString(m2));
     }
 
 }
