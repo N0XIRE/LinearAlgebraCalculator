@@ -10,10 +10,17 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class calculate_Screen extends Activity implements AdapterView.OnItemSelectedListener {
+
+    private AdView mBannerAd;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,15 +70,6 @@ public class calculate_Screen extends Activity implements AdapterView.OnItemSele
                 startActivity(intent);
             }
         });
-        Button donateButton = (Button) findViewById(R.id.donateButton);
-        donateButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(calculate_Screen.this, Donate.class);
-                startActivity(intent);
-            }
-        });
         Button infoButton = (Button) findViewById(R.id.infoButton);
         infoButton.setOnClickListener(new View.OnClickListener() {
 
@@ -82,6 +80,12 @@ public class calculate_Screen extends Activity implements AdapterView.OnItemSele
             }
         });
         // FOOTER NAV END
+
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        // Load the add into Admob banner view.
+        mBannerAd = (AdView) findViewById(R.id.banner_AdView);
+        //Load BannerAd
+        showBannerAd();
     }
 
     @Override
@@ -92,6 +96,12 @@ public class calculate_Screen extends Activity implements AdapterView.OnItemSele
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+    private void showBannerAd() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mBannerAd.loadAd(adRequest);
 
     }
 }

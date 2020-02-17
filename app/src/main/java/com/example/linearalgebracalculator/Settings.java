@@ -6,7 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 public class Settings extends AppCompatActivity {
+
+    private AdView mBannerAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +37,6 @@ public class Settings extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button donateButton = (Button) findViewById(R.id.donateButton);
-        donateButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Settings.this, Donate.class);
-                startActivity(intent);
-            }
-        });
         Button infoButton = (Button) findViewById(R.id.infoButton);
         infoButton.setOnClickListener(new View.OnClickListener() {
 
@@ -50,6 +47,17 @@ public class Settings extends AppCompatActivity {
             }
         });
         // FOOTER NAV END
-    }
 
+        MobileAds.initialize(this, "ca-app-pub-3940256099942544~3347511713");
+        // Load the add into Admob banner view.
+        mBannerAd = (AdView) findViewById(R.id.banner_AdView);
+        //Load BannerAd
+        showBannerAd();
+    }
+    private void showBannerAd() {
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mBannerAd.loadAd(adRequest);
+
+    }
 }

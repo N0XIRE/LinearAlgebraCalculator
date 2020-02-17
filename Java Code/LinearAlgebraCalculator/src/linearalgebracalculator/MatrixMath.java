@@ -3,10 +3,11 @@ package linearalgebracalculator;
 public class MatrixMath {
 
     private int[][] arr;
-    private int[] vector;
-    private int[][] identity;
+    private Fraction[] vector;
+    private Fraction[][] identity;
     private int columns;
     private int rows;
+    private Fraction[][] fracArr;
 
     MatrixMath() {
         arr = null;
@@ -17,43 +18,101 @@ public class MatrixMath {
         rows = arr.length;
         columns = arr[0].length;
         setIdentity();
-        ElementaryRowOp test = new ElementaryRowOp(arr.length, arr[0].length, "3r1+r3");
-        System.out.println(toString(test.getE()));
+        fracArr = convertToFraction(arr);
+
+       // System.out.println(toString(fracArr));
+
+       //ElementaryRowOp test = new ElementaryRowOp(arr.length, arr[0].length, "3r1+r3");
+       // System.out.println(toString(test.getE()));
+    }
+    
+    MatrixMath(Fraction[][] fracArr){
+        this.fracArr = fracArr;
+        rows = fracArr.length;
+        columns = fracArr[0].length;
+        System.out.println(rows);
+        System.out.println(columns);
+        setIdentity();
     }
 
-    int[] MtimesV(int[] v) {
-        int[] result = new int[columns];
+    Fraction [] convertToFraction(int[] a){
+        Fraction[] frac = new Fraction[a.length];
+        for(int column = 0; column< a.length;column++){
+            frac[column] = new Fraction(a[column]);
+        }
+        return frac;
+    }
+    
+    Fraction [][] convertToFraction(int [][] a){
+        Fraction[][] frac = new Fraction[a.length][a[0].length];
+        for(int r = 0; r<rows; r++){
+            for(int c = 0; c<columns; c++){
+                frac[r][c] = new Fraction(arr[r][c]);
+            }
+        }
+        return frac;
+    }
+    
+    String ELop(String operation){
+        ElementaryRowOp op = new ElementaryRowOp(rows, columns, operation);
+        return toString(op.getE());
+    }
+    
+    Fraction [] MtimesV(int[] v) {
+        Fraction [] f = convertToFraction(v);
+        return MtimesV(f);
+    }
+    
+    Fraction[] MtimesV(Fraction[] v){
+        Fraction[] result = new Fraction[columns];
         for (int outer = 0; outer < rows; outer++) {
-            int sum = 0;
+            Fraction sum = new Fraction(0);
             for (int inner = 0; inner < columns; inner++) {
-                sum += arr[outer][inner] * v[inner];
+                sum.add(new Fraction(arr[outer][inner]).multiply(v[inner]));
             }
             result[outer] = sum;
         }
-        System.out.println("[" + result[0] + ", " + result[1] + ", " + result[2] + "]");
         vector = v;
+        System.out.println("[" + result[0] + ", " + result[1] + ", " + result[2] + "]");
         return result;
     }
 
-    int[][] MtimesM(int[][] m) {
-        int[][] result = new int[arr[0].length][m.length]; // size = c1 * r2
-        System.out.println(toString(arr));
+    Fraction[][] MtimesM(int[][] m) {
+        Fraction[][] f = convertToFraction(m);
+        return MtimesM(f);
+    }
+    
+    Fraction[][] MtimesM(Fraction[][] m){
+        
+        Fraction[][] result = new Fraction[m[0].length][m.length];
+        System.out.println(toString(fracArr));
+        System.out.println("times");
         System.out.println(toString(m));
-        int sum;
+        Fraction sum;
         for (int outer = 0; outer < m[0].length; outer++) { // outer iterates through columns
-            for (int middle = 0; middle < arr[0].length; middle++) {
-                sum = 0;
+            for (int middle = 0; middle < fracArr[0].length; middle++) {
+                sum = new Fraction(0);
                 for (int inner = 0; inner < m.length; inner++) {
-                    sum += arr[outer][inner] * m[inner][middle];
+                    sum = sum.add(fracArr[middle][inner].multiply(m[inner][outer]));
+                   // System.out.println(fracArr[middle][inner].multiply(m[inner][outer]));
                 }
-                System.out.println(sum);
-                result[outer][middle] = sum;
+                result[middle][outer] = sum;
             }
         }
         return result;
     }
     
+    Fraction[][] UpperTriangular(){
+        return UpperTriangular(fracArr);
+    }
     
+    Fraction[][] UpperTriangular(Fraction[][] a){
+        fracArr = a;
+        
+        
+        
+        return fracArr;
+    }
 
     String getLinearCombination() {
         String s = "";
@@ -69,19 +128,19 @@ public class MatrixMath {
     }
 
     void setIdentity() {
-        identity = new int[rows][columns];
+        identity = new Fraction[rows][columns];
         for (int outer = 0; outer < rows; outer++) {
             for (int inner = 0; inner < columns; inner++) {
                 if (inner == outer) {
-                    identity[inner][outer] = 1;
+                    identity[inner][outer] = new Fraction(1);
                 } else {
-                    identity[inner][outer] = 0;
+                    identity[inner][outer] = new Fraction(0);
                 }
             }
         }
     }
 
-    int[][] getIdentity() {
+    Fraction[][] getIdentity() {
         return identity;
     }
 
@@ -101,11 +160,11 @@ public class MatrixMath {
         return s;
     }
 
-    public String toString(int[][] a) {
+    public String toString(Fraction[][] a) {
         String s = "";
-        for (int[] row : a) {
+        for (Fraction[] row : a) {
 
-            for (int i : row) {
+            for (Fraction i : row) {
                 s += (i + " ");
             }
             s += ("\n");
@@ -115,7 +174,7 @@ public class MatrixMath {
 
     public class ElementaryRowOp {
 
-        private int[][] e;
+        private Fraction[][] e;
         private int rows;
         private int columns;
 
@@ -126,25 +185,26 @@ public class MatrixMath {
         ElementaryRowOp(int r, int c, String op) {
             rows = r;
             columns = c;
+            Identity();
+            e = identity;
             ElementaryRowMatrix(r, c, op);
         }
 
         void ElementaryRowMatrix(int r, int c, String op) {
-
-            Identity();
-            Fraction firstRow;
-            Fraction secondRow;
+            
+            Fraction firstRowCo;
+            Fraction secondRowCo;
             Fraction temp;
             int firstRindex = op.indexOf("r");
             int lastRindex = op.lastIndexOf("r");
             if (firstRindex == lastRindex) { // if operation only involves one row, then its multiplication
                 String coeffS = op.substring(0, op.indexOf("r"));
-                int coeff = Integer.parseInt(coeffS);
-                int rowNum = Integer.parseInt(op.substring(op.length() - 1)) - 1;
-                firstRow = new Fraction(coeffS);
+                
+                int rowNum = Integer.parseInt(op.substring(op.length() - 1))-1;
+                firstRowCo = new Fraction(coeffS);
                 for (int i = 0; i < e[rowNum].length; i++) {
-                    temp = new Fraction(e[rowNum][i]);
-                    e[rowNum][i] = e[rowNum][i] * coeff;
+                    temp = e[rowNum][i];
+                    e[rowNum][i] = e[rowNum][i].multiply(firstRowCo);
                 }
 
             } else { // if operation involves two rows
@@ -154,14 +214,14 @@ public class MatrixMath {
                 int co1;
                 int co2;
                 if (firstCoeff.length() == 0) {
-                    co1 = 1;
+                    firstRowCo = new Fraction(1);
                 } else {
-                    co1 = Integer.parseInt(firstCoeff);
+                     firstRowCo = new Fraction(firstCoeff);
                 }
                 if (secondCoeff.length() == 0) {
-                    co2 = 1;
+                    secondRowCo = new Fraction(1);
                 } else {
-                    co2 = Integer.parseInt(secondCoeff);
+                    secondRowCo = new Fraction(secondCoeff);
                 }
                 Fraction coeff1 = new Fraction(firstCoeff);
                 Fraction coeff2 = new Fraction(secondCoeff);
@@ -169,24 +229,21 @@ public class MatrixMath {
                 int first = Integer.parseInt(op.substring(firstRindex + 1, firstRindex + 2)) - 1;
                 int second = Integer.parseInt(op.substring(lastRindex + 1, lastRindex + 2)) - 1;
                 for (int i = 0; i < e[0].length; i++) {
-                    firstRow = new Fraction(e[first][i]);
-                    secondRow = new Fraction(e[second][i]);
-                    System.out.println(co1 + "   " + co2 + "   " + operator);
                     switch (operator) {
                         case ("+"):
-                            e[first][i] = co1 * e[first][i] + co2 * e[second][i];
+                            e[first][i] = e[first][i].multiply(firstRowCo).add(e[second][i].multiply(secondRowCo));
                             break;
                         case ("-"):
-                            e[first][i] = co1 * e[first][i] - co2 * e[second][i];
+                            e[first][i] = e[first][i].multiply(firstRowCo).subtract(e[second][i].multiply(secondRowCo));
                             break;
                         case ("*"):
-                            e[first][i] = co1 * e[first][i] * co2 * e[second][i];
+                            e[first][i] =  e[first][i].multiply(firstRowCo).multiply(e[second][i].multiply(secondRowCo));
                             break;
                         case ("/"):
-                            e[first][i] = co1 * e[first][i] / co2 * e[second][i];
+                            e[first][i] = e[first][i].multiply(firstRowCo).divide(e[second][i].multiply(secondRowCo));
                             break;
                         default: //swap
-                            int t = e[first][i];
+                            Fraction t = e[first][i];
                             e[first][i] = e[second][i];
                             e[second][i] = t;
                     }
@@ -195,121 +252,26 @@ public class MatrixMath {
 
         }
 
-        int[][] getE() {
+        Fraction[][] getE() {
             return e;
         }
 
         void Identity() {
-            identity = new int[rows][columns];
+            identity = new Fraction[rows][columns];
             for (int outer = 0; outer < rows; outer++) {
                 for (int inner = 0; inner < columns; inner++) {
                     if (inner == outer) {
-                        identity[inner][outer] = 1;
+                        identity[inner][outer] = new Fraction(1);
                     } else {
-                        identity[inner][outer] = 0;
+                        identity[inner][outer] = new Fraction(0);
                     }
                 }
             }
-            e = identity;
+           // e = identity;
         }
 
-    }
-
-    public class Fraction {
-
-        private int numerator;
-        private int denominator;
-        private int gcd;
-        private int lcm;
-
-        Fraction() {
-
-        }
-
-        Fraction(int num) {
-            numerator = num;
-            denominator = num;
-        }
-
-        Fraction(int numerator, int denominator) {
-            this.numerator = numerator;
-            this.denominator = denominator;
-        }
-
-        Fraction(String s) {
-            if(s.length()==0){
-                numerator = 1;
-                denominator = 1;
-                return;
-            }
-            if (s.contains("/")) {
-                numerator = Integer.parseInt(s.substring(0, s.indexOf("/")));
-                denominator = Integer.parseInt(s.substring(0, s.indexOf("/")));
-            } else {
-                numerator = Integer.parseInt(s);
-                denominator = Integer.parseInt(s);
-            }
-
-        }
-
-        Fraction add(Fraction f2) {
-
-            if (denominator == f2.getDenom()) {
-                Fraction result = new Fraction(numerator + f2.getNum(), denominator);
-                return result;
-            } else { // need to find lcm  lcm = ( denom1 * denom2 ) / gcd     use euclidian algorithim to find gcd
-                if (denominator > f2.getDenom()) { // if denom1 is bigger
-                    gcd = GCD(denominator, f2.getDenom());
-                } else { /// if denom2 is bigger
-                    gcd = GCD(f2.getDenom(), denominator);
-                }
-                lcm = (denominator * f2.getDenom()) / gcd;
-                Fraction result = new Fraction(numerator * lcm + f2.getNum() * lcm, denominator * lcm + f2.getDenom() * lcm);
-                return result;
-            }
-        }
-
-        int GCD(int denom1, int denom2) {
-            int remainder = denom1 % denom2;
-            if (denom1 == 0 || denom2 == 0) {
-                return denom1;
-            }
-            return GCD(denom2, remainder);
-        }
-
-        Fraction subtract(Fraction f2) {
-            Fraction negative = new Fraction(-f2.getNum(), f2.getDenom());
-            Fraction result = new Fraction(add(negative).getNum(), add(negative).getDenom());
-            return result;
-        }
-
-        Fraction multiply(Fraction f2) {
-            int num2 = f2.getNum();
-            int denom2 = f2.getDenom();
-            Fraction result = new Fraction(numerator * num2, denominator * denom2);
-            return result;
-        }
-
-        Fraction divide(Fraction f2) {
-            int num2 = f2.getNum();
-            int denom2 = f2.getDenom();
-            Fraction flipped = new Fraction(denom2, num2);
-            Fraction result = multiply(f2);
-            return result;
-        }
-
-        int getNum() {
-            return numerator;
-        }
-
-        int getDenom() {
-            return denominator;
-        }
-
-        public String toString() {
-            return numerator + "/" + denominator;
-        }
-
-    }
+    } 
 
 }
+
+ 

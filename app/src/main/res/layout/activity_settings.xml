@@ -2,75 +2,114 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Settings">
 
-    <Button
-        android:id="@+id/homeButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/banner_AdView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:elevation="2dp"
-        android:text="@string/button_Home"
-        android:textColor="@color/InactiveText"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/footer" />
-
-    <Button
-        android:id="@+id/settingsButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="12dp"
-        android:elevation="2dp"
-        android:text="@string/button_Settings"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/homeButton"
-        app:layout_constraintStart_toEndOf="@+id/homeButton" />
-
-    <Button
-        android:id="@+id/donateButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:elevation="2dp"
-        android:text="@string/button_Donate"
-        android:textColor="@color/InactiveText"
-        android:textSize="14sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/infoButton"
-        app:layout_constraintEnd_toStartOf="@+id/infoButton" />
-
-    <Button
-        android:id="@+id/infoButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:elevation="2dp"
-        android:text="@string/button_Info"
-        android:textColor="@color/InactiveText"
-        android:textSize="14sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ad_id_banner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/footer" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/footer"
+        android:id="@+id/header"
         android:layout_width="0dp"
-        android:layout_height="53dp"
+        android:layout_height="56dp"
         android:background="@color/colorPrimary"
-        android:elevation="-5dp"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/headerText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/button_Settings"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/header"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toTopOf="@+id/header" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/HeaderButtons"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+        <Button
+            android:id="@+id/homeButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:elevation="2dp"
+            android:text="@string/button_Home"
+            android:textColor="@color/InactiveText"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/headerButtons"
+            app:layout_constraintTop_toTopOf="@+id/headerButtons" />
+
+        <Button
+            android:id="@+id/settingsButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="2dp"
+            android:text="@string/button_Settings"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/headerButtons"
+            app:layout_constraintEnd_toStartOf="@+id/infoButton"
+            app:layout_constraintStart_toEndOf="@+id/homeButton"
+            app:layout_constraintTop_toTopOf="@+id/headerButtons" />
+
+        <Button
+            android:id="@+id/infoButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:elevation="2dp"
+            android:text="@string/button_Info"
+            android:textColor="@color/InactiveText"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/settingsButton"
+            app:layout_constraintEnd_toEndOf="@+id/headerButtons"
+            app:layout_constraintTop_toTopOf="@+id/headerButtons" />
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/headerButtons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="-1dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.018" />
+    </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

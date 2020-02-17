@@ -12,11 +12,12 @@ public class LinearAlgebraCalculator {
         //make rowsize and columnsize user inputted
         int rowSize = 3;
         int columnSize = 3;
-        int[][] temp = new int[rowSize][columnSize];
+        Fraction[][] temp = new Fraction[rowSize][columnSize];
         Scanner xd = new Scanner(System.in);
+     
         for (int outer = 0; outer < rowSize; outer++) {
             for (int inner = 0; inner < columnSize; inner++) {
-                temp[outer][inner] = xd.nextInt();
+                temp[outer][inner] = new Fraction(xd.nextLine());
             }
         }
         
@@ -25,15 +26,25 @@ public class LinearAlgebraCalculator {
             v[i] = xd.nextInt();
         }
         */
-       int[][] b = new int[3][3];
-       for (int outer = 0; outer < rowSize; outer++) {
-            for (int inner = 0; inner < columnSize; inner++) {
-                b[outer][inner] = xd.nextInt();
-            }
-        }
+       //Fraction[][] b = new Fraction[rowSize][columnSize];
+       //for (int outer = 0; outer < rowSize; outer++) {
+        //    for (int inner = 0; inner < columnSize; inner++) {
+       //         b[outer][inner] = new Fraction(xd.nextLine());
+       //     }
+       // }
        
         Array arr = new Array(temp);
-        //System.out.println(arr.MtimesMstring(b));
+        String tempo = arr.ELop("r1-5/2r2");
+       System.out.println(tempo);
+       // System.out.println(arr.MtimesMstring(b));
+        /*
+        Fraction three = new Fraction(3);
+        Fraction fouroverfive = new Fraction("4/5");
+        Fraction five = new Fraction(5);
+        Fraction four = fouroverfive.multiply(five);
+        System.out.println(four);
+        */
+   
     }
 
 }
